@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="ftco-about img ftco-section ftco-no-pt ftco-no-pb" id="about-section">
+<div class="container-fluid px-0">
+<div class="row d-flex">
+{% for about in about %}
+<div class="col-md-6 d-flex">
+<div class="img d-flex align-self-stretch align-items-center js-fullheight" style="background-image:url({{ about.image.url }});">
+</div>
+</div>
+<div class="col-md-6 d-flex align-items-center">
+<div class="text px-4 pt-5 pt-md-0 px-md-4 pr-md-5 ftco-animate">
+<h2 class="mb-4">Hello! I'm<span>{{ about.name }}</span> the CEO of a Mostudio Photography</h2>
+<p>{{ about.description}}</p>
+<div class="team-wrap row mt-4">
+    {% for i in authors %}
+<div class="col-md-4 team">
+<div class="img" style="background-image: url({{ i.image.url }});"></div>
+<h3>{{ i.name }}</h3>
+<span></span>
+</div>
+    {% endfor %}
+</div>
+</div>
+</div>
+{% endfor %}
+</div>
+</div>
+</section>
+{% endblock %}

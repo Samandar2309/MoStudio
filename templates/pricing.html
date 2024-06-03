@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+<div class="container px-md-0">
+<div class="row d-flex no-gutters">
+    {% for i in pricing %}
+<div class="col-md-3 pricing">
+<div class="row no-gutters align-items-center">
+<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url({{ i.image.url }});">
+<div class="text p-4 ftco-animate">
+<h3>{{ i.title}}</h3>
+<ul>
+<li><span>Photos</span>{{ i.photos }}</li>
+<li><span>Processing</span>{{ i.processing }}</li>
+<li><span>Type of Camera</span>{{ i.type }}</li>
+<li><span>Resolution</span>{{ i.resolution }}</li>
+<li><span>Term</span>{{ i.term}}</li>
+</ul>
+<span class="price">${{ i.price }}</span>
+<p><a href="#" class="btn-custom">Explore</a></p>
+</div>
+</div>
+</div>
+</div>
+    {% endfor %}
+</div>
+</div>
+</section>
+{% endblock %}

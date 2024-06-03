@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section class="ftco-section ftco-no-pt ftco-no-pb">
+<div class="container px-md-0">
+<div class="row d-flex no-gutters">
+    {% for i in gallery %}
+<div class="col-md-4 portfolio-wrap-2">
+<div class="row no-gutters align-items-center">
+<div href="#" class="img w-100 js-fullheight d-flex align-items-center" style="background-image: url({{ i.image.url }});">
+<div class="text p-4 p-md-5 ftco-animate">
+<div class="desc">
+<div class="top">
+<span class="subheading">Portrait</span>
+<h2 class="mb-4"><a href="single.html">{{ i.title }}</a></h2>
+<p><a href="single.html" class="custom-btn">View Portfolio</a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+    {% endfor %}
+</div>
+<div class="row d-flex">
+<div class="col-md-12">
+<a href="#" class="btn-custom-load d-block w-100 text-center py-4">Load more <span class="fa fa-refresh"></span></a>
+</div>
+</div>
+</div>
+</section>
+{% endblock %}
